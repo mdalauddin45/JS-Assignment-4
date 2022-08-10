@@ -1,8 +1,11 @@
 //1. Problem-01 : radian to degree
 
 function radianToDegree(radian) {
-
+    const pi = 3.1416;
+    const digree = radian * (180 / pi);
+    return digree.toFixed(2);
 }
+console.log(radianToDegree(1));
 
 // 2. check whether the given file name is a javaScript file or not
 function isJavaScriptFile(string) {
