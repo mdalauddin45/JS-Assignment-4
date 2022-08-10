@@ -9,8 +9,17 @@ console.log(radianToDegree(1));
 
 // 2. check whether the given file name is a javaScript file or not
 function isJavaScriptFile(string) {
-
+    if (string.match(/(\w*)\.js$/) == 0) {
+        console.log('false');
+        return false;
+    }
+    else {
+        console.log('true');
+        return true;
+    }
 }
+
+isJavaScriptFile('index.js');
 
 //3. calculate the total oil price that I have to pay
 /*
