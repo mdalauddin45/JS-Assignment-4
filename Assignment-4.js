@@ -1,25 +1,23 @@
 //1. Problem-01 : radian to degree
-
 function radianToDegree(radian) {
-    const pi = 3.1416;
-    const digree = radian * (180 / pi);
-    return digree.toFixed(2);
+    const pi = Math.PI;
+    const degree = radian * (180 / pi);
+    return degree.toFixed(2);
 }
-console.log(radianToDegree(1));
+console.log(radianToDegree(10));
+console.log(radianToDegree(25));
+console.log(radianToDegree(199));
 
 // 2. check whether the given file name is a javaScript file or not
 function isJavaScriptFile(string) {
-    if (string.match(/(\w*)\.js$/) == 0) {
-        console.log('false');
-        return false;
-    }
-    else {
-        console.log('true');
-        return true;
-    }
+    return /\.js$/i.test(string)
 }
 
-isJavaScriptFile('index.js');
+
+console.log(isJavaScriptFile("app.js")) // true;
+console.log(isJavaScriptFile("js.png"))    // false;
+console.log(isJavaScriptFile("image.js.png"))  // false;
+console.log(isJavaScriptFile("image.png.js"))   // true;
 
 //3. calculate the total oil price that I have to pay
 /*
@@ -27,33 +25,31 @@ disel----> 114
 patrol---> 130
 octane----> 135
 */
-function oilPrice(diselQuantity, patrolQuantity, octaneQuantity) {
-    let diselPrice = 114;
+function oilPrice(dieselQuantity, patrolQuantity, octaneQuantity) {
+    let dieselPrice = 114;
     let patrolPrice = 130;
     let octanePrice = 135;
 
-    // Disel 
-    const totalDiselPrice = diselPrice * diselQuantity;
-    const disel = totalDiselPrice;
-    console.log(disel);
+    // Diesel 
+    const totalDieselPrice = dieselPrice * dieselQuantity;
+    const diesel = totalDieselPrice;
 
     // Patrol
     const totalPatrolPrice = patrolPrice * patrolQuantity;
     const patrol = totalPatrolPrice;
-    console.log(patrol);
 
     // Octan
     const totalOctanePrice = octanePrice * octaneQuantity;
     const octane = totalOctanePrice;
-    console.log(octane);
 
     //Total price
-    const totalOilPrice = patrol + disel + octane;
-    console.log(totalOilPrice);
-
+    const totalOilPrice = patrol + diesel + octane;
+    return totalOilPrice;
 }
-oilPrice(2, 4, 1);
-
+console.log(oilPrice(1, 1, 1));
+console.log(oilPrice(30, 20, 10));
+console.log(oilPrice(1, 0, 2));
+console.log(oilPrice(0, 2, 3));
 //4.
 /*
 reserved bus ---> 50

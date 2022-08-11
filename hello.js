@@ -1,27 +1,41 @@
-function oilPrice(diselQuantity, patrolQuantity, octaneQuantity) {
-    let diselPrice = 114;
-    let patrolPrice = 130;
-    let octanePrice = 135;
+/*
+{name: 'tom', friend: 'Roke'}
+{name: "Roke", friend: "Tom"}
 
-    // Disel 
-    const totalDiselPrice = diselPrice * diselQuantity;
-    const disel = totalDiselPrice;
-    console.log(disel);
 
-    // Patrol
-    const totalPatrolPrice = patrolPrice * patrolQuantity;
-    const patrol = totalPatrolPrice;
-    console.log(patrol);
+{name: 'Chris', friend: 'John'}
+{name: "Raz", friend: "Jonny"}
 
-    // Octan
-    const totalOctanePrice = octanePrice * octaneQuantity;
-    const octane = totalOctanePrice;
-    console.log(octane);
-
-    //Total price
-    const totalOilPrice = patrol + disel + octane;
-    console.log(totalOilPrice);
-
+function isBestFriend(friend1, friend2) {
+    const friends = [{ name: 'Chris', friend: 'John' },
+    { name: "Raz", friend: "Jonny" }]
+    // console.log(remainder);
+    if (friends == friend1, friend2) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
-oilPrice(2, 4, 1);
+const myNumber = isBestFriend('Chris');
+console.log(myNumber);
+*/
 
+
+// const jim = 84;
+// const dela = 75;
+// if (jim > dela) {
+//     console.log('true');
+//     return true;
+// }
+// else {
+//     console.log('dela will get the cake');
+
+// }
+
+function isBestFriend(firstFriend, SecondFriend) {
+    const friend = [{ name: 'tom', friend: 'Roke' },
+    { name: "Roke", friend: "Tom" }]
+}
+
+isBestFriend('abul', 'babul')
