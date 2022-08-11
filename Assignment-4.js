@@ -70,20 +70,48 @@ microbus -------> 4
 public bus------> 4
 public bus fare-> 250
 */
-function publicBusFare(people) {
 
+function publicBusFare(people) {
+    const reservedBus = people % 50;
+    const microBus = reservedBus % 11;
+    const publicBus = microBus * 250;
+    return publicBus;
 }
+console.log(publicBusFare(50));
+console.log(publicBusFare(55));
+console.log(publicBusFare(112));
+console.log(publicBusFare(235));
+console.log(publicBusFare(365));
 
 // 5.
 /*
-{name: 'tom', friend: 'Roke'}
-{name: "Roke", friend: "Tom"}
+
+  { name: "abul", friendName: "babul" },
+  { name: "babul", friendName: "abul" }
+
+  { name: "abul", friendName: "kabul" },
+  { name: "kabul", friendName: "sabul" }
+
+  { name: "doe", friendName: "alex" },
+  { name: "john", friendName: "doe" }
 
 
-{name: 'Chris', friend: 'John'}
-{name: "Raz", friend: "Jonny"}
 */
-function isBestFriend() {
 
+function isBestFriend(friend1, friend2) {
+    if (friend1.name && friend1.friend && friend2.name && friend2.friend) {
+        if (friend1.name.toUpperCase() === friend2.friend.toUpperCase() && friend2.name.toUpperCase() === friend1.friend.toUpperCase()) {
+            return true; //ouput
+        }
+        else {
+            return false; //ouput
+        }
+    }
+
+    else {
+        return 'friend or name key is missing';
+    }
 }
-
+const bestFriend1 = { name: "abul", friend: "babul" }
+const bestFriend2 = { name: "babul", friend: "abul" }
+console.log(isBestFriend(bestFriend1, bestFriend2));
