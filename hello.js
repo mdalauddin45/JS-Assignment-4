@@ -19,7 +19,7 @@ function isBestFriend(friend1, friend2) {
 }
 const myNumber = isBestFriend('Chris');
 console.log(myNumber);
-*/
+
 
 
 // const jim = 84;
@@ -39,3 +39,20 @@ function isBestFriend(firstFriend, SecondFriend) {
 }
 
 isBestFriend('abul', 'babul')
+*/
+
+function isJavaScriptFile(string) {
+    let extention = string.substr(string.lastIndexOf('.') + 1);
+    if (extention == 'js') {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+console.log(isJavaScriptFile("app.js")) // true;
+console.log(isJavaScriptFile("js.png"))    // false;
+console.log(isJavaScriptFile("image.js.png"))  // false;
+console.log(isJavaScriptFile("image.png.js"))   // true;

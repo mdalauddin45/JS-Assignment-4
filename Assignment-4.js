@@ -9,8 +9,15 @@ console.log(radianToDegree(25));
 console.log(radianToDegree(199));
 
 // 2. check whether the given file name is a javaScript file or not
+
 function isJavaScriptFile(string) {
-    return /\.js$/i.test(string)
+    let extention = string.substr(string.lastIndexOf('.') + 1);
+    if (extention == 'js') {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 
@@ -50,6 +57,8 @@ console.log(oilPrice(1, 1, 1));
 console.log(oilPrice(30, 20, 10));
 console.log(oilPrice(1, 0, 2));
 console.log(oilPrice(0, 2, 3));
+
+
 //4.
 /*
 reserved bus ---> 50
