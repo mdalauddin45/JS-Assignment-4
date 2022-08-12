@@ -1,17 +1,29 @@
-//1. Problem-01 : radian to degree
+/*
+ Problem-01 : radian to degree
+*/
+
 function radianToDegree(radian) {
+    if (typeof radian !== "number") {
+        return "please enter a number";
+    }
     const pi = Math.PI;
     const degree = radian * (180 / pi);
     return degree.toFixed(2);
 }
-console.log(radianToDegree(10));
-console.log(radianToDegree(25));
-console.log(radianToDegree(199));
+// const result = radianToDegree(1);
+// console.log(result);
 
-// 2. check whether the given file name is a javaScript file or not
 
-function isJavaScriptFile(string) {
-    let extention = string.substr(string.lastIndexOf('.') + 1);
+/*
+ Problem-02. check whether the given file name is a javaScript file or not
+*/
+
+
+function isJavaScriptFile(fileName) {
+    if (typeof fileName !== "string") {
+        return "please  provide a valid input";
+    }
+    let extention = fileName.substr(fileName.lastIndexOf('.') + 1);
     if (extention == 'js') {
         return true;
     }
@@ -19,20 +31,23 @@ function isJavaScriptFile(string) {
         return false;
     }
 }
+// const result = isJavaScriptFile("fileNamep.js");
+// console.log(result);
 
 
-console.log(isJavaScriptFile("app.js")) // true;
-console.log(isJavaScriptFile("js.png"))    // false;
-console.log(isJavaScriptFile("image.js.png"))  // false;
-console.log(isJavaScriptFile("image.png.js"))   // true;
-
-//3. calculate the total oil price that I have to pay
 /*
+Problem-03. calculate the total oil price that I have to pay
+
 disel----> 114
 patrol---> 130
 octane----> 135
 */
+
+
 function oilPrice(dieselQuantity, patrolQuantity, octaneQuantity) {
+    if (typeof dieselQuantity !== "number" || typeof patrolQuantity !== "number" || typeof octaneQuantity !== "number") {
+        return "please provide a valid input";
+    }
     let dieselPrice = 114;
     let patrolPrice = 130;
     let octanePrice = 135;
@@ -53,14 +68,13 @@ function oilPrice(dieselQuantity, patrolQuantity, octaneQuantity) {
     const totalOilPrice = patrol + diesel + octane;
     return totalOilPrice;
 }
-console.log(oilPrice(1, 1, 1));
-console.log(oilPrice(30, 20, 10));
-console.log(oilPrice(1, 0, 2));
-console.log(oilPrice(0, 2, 3));
+// const result = oilPrice(1, 1, 1);
+// console.log(result);
 
 
-//4.
 /*
+Problem-04:
+
 reserved bus ---> 50
 micro bus ------> 11
 rest prople will go by public bus
@@ -71,20 +85,22 @@ public bus------> 4
 public bus fare-> 250
 */
 
+
 function publicBusFare(people) {
+    if (typeof people !== "number") {
+        return "please enter a number";
+    }
     const reservedBus = people % 50;
     const microBus = reservedBus % 11;
     const publicBus = microBus * 250;
     return publicBus;
 }
-console.log(publicBusFare(50));
-console.log(publicBusFare(55));
-console.log(publicBusFare(112));
-console.log(publicBusFare(235));
-console.log(publicBusFare(365));
+// const result = publicBusFare(50);
+// console.log(result);
 
-// 5.
+
 /*
+Problem-05:
 
   { name: "abul", friendName: "babul" },
   { name: "babul", friendName: "abul" }
@@ -94,24 +110,26 @@ console.log(publicBusFare(365));
 
   { name: "doe", friendName: "alex" },
   { name: "john", friendName: "doe" }
-
-
 */
 
+
 function isBestFriend(friend1, friend2) {
+    if (typeof friend1 !== "object" || typeof friend2 !== "object") {
+        return "please provide a valid input";
+    }
     if (friend1.name && friend1.friend && friend2.name && friend2.friend) {
         if (friend1.name.toUpperCase() === friend2.friend.toUpperCase() && friend2.name.toUpperCase() === friend1.friend.toUpperCase()) {
-            return true; //ouput
+            return true;
         }
         else {
-            return false; //ouput
+            return false;
         }
     }
 
     else {
-        return 'friend or name key is missing';
+        return 'They are not bestfriend';
     }
 }
-const bestFriend1 = { name: "abul", friend: "babul" }
-const bestFriend2 = { name: "babul", friend: "abul" }
-console.log(isBestFriend(bestFriend1, bestFriend2));
+// const bestFriend1 = { name: "abul", friend: "babul" }
+// const bestFriend2 = { name: "babul", friend: "abul" }
+// console.log(isBestFriend(bestFriend1, bestFriend2));
